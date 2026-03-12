@@ -1,0 +1,102 @@
+{
+  "characters": [
+    {
+      "id": "krishna",
+      "name": "Lord Krishna",
+      "nameDevanagari": "श्रीकृष्ण",
+      "description": "The Supreme Personality of Godhead, dark-complexioned and infinitely beautiful",
+      "visualDescription": "Young male deity with deep blue-black skin (the color of a rain-laden cloud), large lotus-shaped eyes with gentle arch, a slight enigmatic smile, wearing a golden crown (kirita-mukuta) adorned with peacock feather, golden earrings (makara-kundala), a garland of wildflowers (vaijayanti-mala) reaching to his knees, yellow silk dhoti (pitambara), standing in tribhanga (three-fold bending) pose, holding a flute in his hands, with a golden sacred thread across his chest",
+      "role": "Supreme Lord"
+    },
+    {
+      "id": "vishnu",
+      "name": "Lord Vishnu",
+      "nameDevanagari": "श्रीविष्णु",
+      "description": "The Supreme Lord who sustains all creation",
+      "visualDescription": "Majestic male deity with deep blue-black skin (same complexion as Krishna), four arms holding conch (shankha) in upper left, discus (sudarshana chakra) in upper right, mace (gada) in lower left, lotus in lower right, wearing elaborate golden crown (kirita-mukuta), golden earrings, a large radiant gem (kaustubha) on chest, yellow silk garments (pitambara), seated or standing on thousand-headed serpent Shesha with a golden halo behind, serene and regal expression with large lotus eyes",
+      "role": "Supreme Lord (four-armed form)"
+    },
+    {
+      "id": "brahma",
+      "name": "Lord Brahma",
+      "nameDevanagari": "ब्रह्मा",
+      "description": "The first created being, the cosmic architect",
+      "visualDescription": "Elderly male deity with four faces (chatur-mukha) visible from front, reddish-golden complexion, white beard on each face, four arms holding the Vedas (book), a water pot (kamandalu), a rosary (akshamala), and a lotus, wearing white garments, seated on a lotus flower, with a golden halo, wise and contemplative expression",
+      "role": "Creator deity, first poet (adi-kavi)"
+    },
+    {
+      "id": "shiva",
+      "name": "Lord Shiva",
+      "nameDevanagari": "शिव",
+      "description": "The great destroyer and supreme yogi",
+      "visualDescription": "Ash-smeared male deity with fair/white skin covered in sacred ash (vibhuti), matted dreadlocks (jata) piled high with the crescent moon and river Ganga flowing from them, third eye on forehead, wearing tiger skin around waist, a garland of rudraksha beads, serpents as ornaments around neck and arms, holding trident (trishula) and damaru drum, with a serene meditative expression",
+      "role": "Destroyer and supreme devotee"
+    },
+    {
+      "id": "suta",
+      "name": "Suta Goswami",
+      "nameDevanagari": "सूत गोस्वामी",
+      "description": "The humble narrator of the Bhagavatam",
+      "visualDescription": "Middle-aged Indian sage with warm brown skin, clean-shaven face with gentle smile, wearing simple saffron/ochre robes (dhoti and uttariya), a small tuft of hair (shikha) on otherwise shaved head, sacred thread (yajnopavita) across chest, sitting cross-legged in a teaching posture with hands in expressive mudras, humble and radiant countenance, a small tilaka mark on forehead",
+      "role": "Narrator of Bhagavatam"
+    },
+    {
+      "id": "shaunaka",
+      "name": "Shaunaka Rishi",
+      "nameDevanagari": "शौनक ऋषि",
+      "description": "The chief of the sages at Naimisharanya",
+      "visualDescription": "Elderly Indian sage with warm brown skin, long white beard and white hair tied in a topknot, lean ascetic build, wearing bark-cloth and deerskin garments with saffron shawl, sacred thread across chest, rudraksha mala around neck, sitting in a dignified posture, wise penetrating eyes, prominent tilaka on forehead",
+      "role": "Chief sage at Naimisharanya"
+    },
+    {
+      "id": "vyasa",
+      "name": "Vyasadeva",
+      "nameDevanagari": "व्यासदेव",
+      "description": "The compiler of the Vedas and author of the Bhagavatam",
+      "visualDescription": "Elderly Indian sage with dark brown skin, long matted grey-black hair and long grey beard, powerfully built despite old age, wearing simple white/cream garments, sacred thread, sitting on a raised seat with palm-leaf manuscripts around him, intense scholarly eyes with deep wisdom, prominent tilaka mark",
+      "role": "Author of Bhagavatam, compiler of Vedas"
+    },
+    {
+      "id": "shukadeva",
+      "name": "Shukadeva Goswami",
+      "nameDevanagari": "शुकदेव गोस्वामी",
+      "description": "The enlightened son of Vyasa who spoke the Bhagavatam to King Parikshit",
+      "visualDescription": "Young Indian sage appearing about 16 years old with luminous fair skin, completely naked or wearing only a small loincloth (showing his total renunciation), no hair on head (completely shaved), large innocent eyes radiating divine knowledge, slender youthful build, glowing with spiritual effulgence, often depicted walking or sitting in a completely detached posture",
+      "role": "Speaker of Bhagavatam to King Parikshit"
+    },
+    {
+      "id": "parikshit",
+      "name": "King Parikshit",
+      "nameDevanagari": "राजा परीक्षित्",
+      "description": "The great king who heard the Bhagavatam in his final seven days",
+      "visualDescription": "Noble young Indian king with fair golden-brown skin, wearing royal but simple white garments (having renounced his kingdom), a small golden crown set aside nearby, strong regal features with high cheekbones, sitting on the bank of the Ganges in a determined meditative posture, a slight expression of urgency and devotion, short dark hair, clean-shaven",
+      "role": "Listener of Bhagavatam"
+    },
+    {
+      "id": "narada",
+      "name": "Narada Muni",
+      "nameDevanagari": "नारद मुनि",
+      "description": "The divine sage who travels across all worlds spreading devotion",
+      "visualDescription": "Eternally youthful Indian sage with golden-fair skin, carrying a veena (stringed instrument) in hand, wearing simple white garments, a tuft of hair (shikha) on shaved head, always smiling with an expression of divine ecstasy, slender build, moving through the sky or standing with one foot slightly raised as if about to travel, a small kamandalu (water pot) at his side",
+      "role": "Travelling sage, devotee of Vishnu"
+    },
+    {
+      "id": "madhvacharya",
+      "name": "Madhvacharya",
+      "nameDevanagari": "मध्वाचार्य",
+      "description": "The great philosopher who revealed the true meaning of the Bhagavatam",
+      "visualDescription": "Powerfully built Indian saint with dark brown skin, broad shoulders, shaved head with prominent Vaishnava tilaka (two vertical white lines with a central red/yellow line) on forehead, wearing saffron robes in the style of a sannyasi, sacred thread, holding palm-leaf scriptures, seated in a teaching posture with commanding yet compassionate expression, rudraksha and tulasi malas around neck",
+      "role": "Dvaita philosopher, commentator"
+    }
+  ],
+  "styleGuide": {
+    "artStyle": "Traditional South Indian Tanjore painting style with rich jewel-tone colors, gold leaf accents, intricate ornamental borders, divine figures with serene expressions and elongated almond-shaped eyes, scenes lit with warm golden divine light, decorated architectural elements with temple motifs, the overall feeling should be sacred, luminous, and devotional",
+    "colorPalette": "Deep reds, royal blues, rich greens, abundant gold and saffron, warm earth tones for backgrounds, skin tones consistent per character as described",
+    "consistency": "CRITICAL: All characters must match their physical descriptions exactly every time they appear. Krishna always has blue-black skin and peacock feather crown. Vishnu always has four arms. Brahma always has four faces. Maintain the same face structure, body proportions, and distinctive features across all generated images.",
+    "backgrounds": {
+      "naimisharanya": "Dense ancient Indian forest with towering banyan and peepal trees, dappled golden sunlight filtering through canopy, sacred fire (havan-kund) in a clearing, sages seated in concentric circles on grass mats",
+      "vaikuntha": "Transcendental realm with golden-white luminous sky, wish-fulfilling trees (kalpa-vriksha), crystal-clear rivers, palatial structures of gold and gemstones, everything radiating divine light",
+      "cosmic": "Vast cosmic ocean (karana-samudra) with Lord Vishnu reclining on serpent Shesha, galaxies and stars visible, the lotus growing from Vishnu's navel with Brahma seated on it"
+    }
+  }
+}
