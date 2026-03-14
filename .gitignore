@@ -33,9 +33,6 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# generated audio (ElevenLabs TTS, ~60MB)
-/public/audio/
-
 # generated images (MiniMax, ~100MB)
 /public/images/verses/
 /public/images/samples/

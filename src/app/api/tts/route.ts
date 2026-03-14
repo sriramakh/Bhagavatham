@@ -47,14 +47,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'text is required' }, { status: 400 });
     }
 
-    const apiKey = process.env.ELEVENLAB_API_KEY;
-    if (!apiKey) {
-      return NextResponse.json(
-        { error: 'ELEVENLAB_API_KEY not configured' },
-        { status: 500 }
-      );
-    }
-
     // Cache key
     const cacheKey = crypto
       .createHash('md5')
@@ -66,9 +58,17 @@ export async function POST(req: NextRequest) {
     const cachePath = path.join(cacheDir, `${cacheKey}.mp3`);
     const publicUrl = `/audio/${subDir}/${cacheKey}.mp3`;
 
-    // Return cached audio if exists
+    // Return cached audio if exists (no API key needed)
     if (fs.existsSync(cachePath)) {
       return NextResponse.json({ url: publicUrl });
+    }
+
+    const apiKey = process.env.ELEVENLAB_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json(
+        { error: 'ELEVENLAB_API_KEY not configured' },
+        { status: 500 }
+      );
     }
 
     // Prepare text for better verse recitation
