@@ -29,6 +29,29 @@ load_dotenv(os.path.join(SCRIPT_DIR, '..', '.env.local'))
 API_KEY = os.environ.get('ELEVENLAB_API_KEY', '')
 
 
+def is_consonant(ch):
+    """Check if a character is a Devanagari consonant (क-ह)."""
+    return '\u0915' <= ch <= '\u0939'
+
+
+def add_schwa_hints(text):
+    """Add explicit अ after word-final bare consonants to prevent Hindi schwa deletion.
+
+    In Sanskrit, every consonant has an inherent 'a' (schwa) unless a halant (्) is present.
+    Hindi TTS models drop this final 'a', so उवाच sounds like 'uvach' instead of 'uvacha'.
+    Adding explicit अ forces the model to pronounce it.
+    """
+    chars = list(text)
+    result = []
+    for i, ch in enumerate(chars):
+        result.append(ch)
+        if is_consonant(ch):
+            next_ch = chars[i + 1] if i + 1 < len(chars) else ' '
+            if next_ch in (' ', '\n', '।', '॥') or i + 1 >= len(chars):
+                result.append('अ')
+    return ''.join(result)
+
+
 def prepare_verse_text(sanskrit):
     """Clean up verse text for natural TTS recitation."""
     text = sanskrit.strip()
@@ -41,6 +64,10 @@ def prepare_verse_text(sanskrit):
     # Clean up
     text = re.sub(r'।\s*।', '।', text)
     text = re.sub(r'\s+', ' ', text).strip()
+    # ॐ → ओम्, (with comma pause) so TTS says "Om" not "A-U-M"
+    text = text.replace('ॐ', 'ओम्,')
+    # Fix Sanskrit schwa deletion
+    text = add_schwa_hints(text)
     return text
 
 

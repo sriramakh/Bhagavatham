@@ -8,6 +8,29 @@ const ELEVENLABS_API_URL = 'https://api.elevenlabs.io/v1/text-to-speech';
 const RACHEL_VOICE_ID = '21m00Tcm4TlvDq8ikWAM';
 
 /**
+ * Add explicit अ after word-final bare Devanagari consonants to prevent
+ * Hindi-style schwa deletion. In Sanskrit the inherent 'a' is always
+ * pronounced, so उवाच should be "uvācha" not "uvāch".
+ */
+function addSchwaHints(text: string): string {
+  const chars = [...text];
+  const result: string[] = [];
+  for (let i = 0; i < chars.length; i++) {
+    const ch = chars[i];
+    result.push(ch);
+    const code = ch.codePointAt(0) ?? 0;
+    // Devanagari consonants: क (0x0915) through ह (0x0939)
+    if (code >= 0x0915 && code <= 0x0939) {
+      const next = chars[i + 1] ?? ' ';
+      if (next === ' ' || next === '\n' || next === '।' || next === '॥' || i + 1 >= chars.length) {
+        result.push('अ');
+      }
+    }
+  }
+  return result.join('');
+}
+
+/**
  * Generate natural Sanskrit speech using ElevenLabs TTS.
  * Voice: Rachel (multilingual v2), speed 0.9
  *
@@ -50,6 +73,12 @@ export async function POST(req: NextRequest) {
 
     // Prepare text for better verse recitation
     let processedText = text.trim();
+
+    // ॐ → ओम्, (with comma pause) so TTS says "Om" not "A-U-M"
+    processedText = processedText.replace(/ॐ/g, 'ओम्,');
+    // Fix Sanskrit schwa deletion: add explicit अ after word-final bare consonants.
+    // Hindi TTS drops the inherent 'a' vowel, so उवाच sounds like 'uvach' instead of 'uvacha'.
+    processedText = addSchwaHints(processedText);
 
     if (mode === 'verse') {
       // Replace double danda with period for natural full-stop pause
