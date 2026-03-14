@@ -37,7 +37,7 @@ Madhvacharya's Teaching: ${verseContext.madhvaTeaching || ''}
 Chapter: ${verseContext.chapterTitle || ''}`;
     }
 
-    const response = await openai.chat.completions.create({
+    const response = await openai().chat.completions.create({
       model: 'gpt-4.1',
       messages: [
         { role: 'system', content: systemPrompt },
