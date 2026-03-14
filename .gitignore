@@ -43,6 +43,8 @@ yarn-error.log*
 # generated lesson cache (rebuilt from scripts)
 /data/generated-lessons/
 /data/vedabase-cache/
+/data/tatparya-cache/
+/data/tatparya-raw/
 
 # vercel
 .vercel
