@@ -360,8 +360,8 @@ export default function Home() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#0a0a12]">
         <div className="text-center">
-          <div className="w-16 h-16 mx-auto mb-4 rounded-full border-[3px] border-[#d4a843] flex items-center justify-center text-3xl animate-pulse-gold">
-            {'\uD83D\uDE4F'}
+          <div className="w-16 h-16 mx-auto mb-4 rounded-full border-[3px] border-[#d4a843] overflow-hidden animate-pulse-gold shadow-[0_0_20px_rgba(212,168,67,0.3)]">
+            <img src="/images/logo/logo.png" alt="Mahavishnu" className="w-full h-full object-cover object-[center_20%]" />
           </div>
           <div className="font-heading text-[#d4a843] tracking-[2px]">Loading...</div>
         </div>
@@ -564,8 +564,8 @@ export default function Home() {
 function WelcomeScreen({ onStart, onReset }: { onStart: () => void; onReset: () => void }) {
   return (
     <div className="text-center py-10 px-5 animate-fadeIn">
-      <div className="w-40 h-40 mx-auto mb-8 rounded-full border-[3px] border-[#d4a843] flex items-center justify-center text-[4rem] shadow-[0_0_20px_rgba(212,168,67,0.3),0_0_60px_rgba(212,168,67,0.1)] animate-pulse-gold bg-[radial-gradient(circle,rgba(212,168,67,0.1),transparent)]">
-        {'\uD83D\uDE4F'}
+      <div className="w-40 h-40 mx-auto mb-8 rounded-full border-[3px] border-[#d4a843] overflow-hidden shadow-[0_0_20px_rgba(212,168,67,0.3),0_0_60px_rgba(212,168,67,0.1)] animate-pulse-gold">
+        <img src="/images/logo/logo.png" alt="Mahavishnu" className="w-full h-full object-cover object-[center_20%]" />
       </div>
       <h1 className="font-heading text-[#d4a843] text-[2rem] tracking-[3px] mb-2">
         QUEST OF THE SKANDHAS
