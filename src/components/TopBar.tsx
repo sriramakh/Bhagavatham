@@ -67,7 +67,7 @@ const TopBar = memo(function TopBar({
 
         <button
           onClick={onSettingsClick}
-          className="bg-transparent border-none text-[#a89b8c] cursor-pointer text-[1.1rem] p-1 hover:text-[#f0d078] transition-colors"
+          className="bg-transparent border-none text-[#a89b8c] cursor-pointer text-[1.1rem] p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:text-[#f0d078] transition-colors"
           title="Settings"
         >
           {'\u2699'}

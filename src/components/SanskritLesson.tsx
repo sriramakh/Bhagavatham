@@ -67,8 +67,8 @@ const SanskritLesson = memo(function SanskritLesson({
 
 const TeachCard = memo(function TeachCard({ word }: { word: SanskritWord }) {
   return (
-    <div className="bg-[#1a1a2e] border border-[#2a2a3e] rounded-xl p-6 flex items-center gap-5 transition-all hover:border-[#8a6d2b]">
-      <div className="font-sanskrit text-[#f0d078] text-[1.8rem] min-w-[100px] text-center">
+    <div className="bg-[#1a1a2e] border border-[#2a2a3e] rounded-xl p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5 transition-all hover:border-[#8a6d2b]">
+      <div className="font-sanskrit text-[#f0d078] text-[1.8rem] sm:min-w-[100px] text-left sm:text-center w-full sm:w-auto">
         {word.san}
       </div>
       <div className="flex-1">
@@ -161,9 +161,9 @@ function DragDropExercise({ words, onComplete, onError }: DragDropExerciseProps)
         Drag each Sanskrit word to its correct meaning
       </p>
 
-      <div className="flex gap-10 justify-center flex-wrap">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 justify-center">
         {/* Sources column */}
-        <div className="flex flex-col gap-2 min-w-[140px]">
+        <div className="flex flex-col gap-2 w-full sm:min-w-[140px] sm:w-auto">
           <div className="text-[0.7rem] text-[#6b6157] uppercase tracking-[1px] text-center mb-1">
             Sanskrit
           </div>
@@ -196,7 +196,7 @@ function DragDropExercise({ words, onComplete, onError }: DragDropExerciseProps)
         </div>
 
         {/* Targets column */}
-        <div className="flex flex-col gap-2 min-w-[140px]">
+        <div className="flex flex-col gap-2 w-full sm:min-w-[140px] sm:w-auto">
           <div className="text-[0.7rem] text-[#6b6157] uppercase tracking-[1px] text-center mb-1">
             Meaning
           </div>

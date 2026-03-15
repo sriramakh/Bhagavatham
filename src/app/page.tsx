@@ -390,7 +390,7 @@ export default function Home() {
         </div>
 
         {/* Main Content */}
-        <main className="px-8 py-6 max-w-full overflow-y-auto h-[calc(100vh-56px)]">
+        <main className="px-4 sm:px-6 md:px-8 py-4 sm:py-6 max-w-full overflow-y-auto h-[calc(100vh-56px)]">
           {/* Welcome Screen */}
           {screen === 'welcome' && (
             <WelcomeScreen onStart={goToChapterSelect} onReset={handleResetProgress} />
@@ -427,7 +427,7 @@ export default function Home() {
                       Skandha {state.currentSkandha} {'\u00B7'} Ch. {currentChapter.num}: {currentChapter.title}
                     </span>
                   </div>
-                  <div className="flex gap-1">
+                  <div className="flex gap-1 overflow-x-auto pb-1">
                     {([
                       { key: 'story' as Screen, label: 'Story', icon: '\uD83D\uDCDC' },
                       { key: 'verse' as Screen, label: 'Verse', icon: '\uD83D\uDD49\uFE0F' },
@@ -441,7 +441,7 @@ export default function Home() {
                           setScreen(tab.key);
                           if (tab.key === 'boss') setBossStarted(false);
                         }}
-                        className={`px-3 py-1.5 rounded-lg text-[0.75rem] font-heading tracking-[0.5px] transition-all cursor-pointer border ${
+                        className={`px-2 sm:px-3 py-1.5 rounded-lg text-[0.7rem] sm:text-[0.75rem] font-heading tracking-[0.5px] transition-all cursor-pointer border whitespace-nowrap flex-shrink-0 ${
                           screen === tab.key
                             ? 'bg-[#1a1a2e] text-[#d4a843] border-[#8a6d2b]'
                             : 'bg-transparent text-[#6b6157] border-transparent hover:text-[#a89b8c] hover:border-[#2a2a3e]'

@@ -187,7 +187,7 @@ const QuizBattle = memo(function QuizBattle({
       </div>
 
       {/* Question Card */}
-      <div className="bg-[#1a1a2e] border border-[#2a2a3e] rounded-xl p-6">
+      <div className="bg-[#1a1a2e] border border-[#2a2a3e] rounded-xl p-4 sm:p-6">
         {/* MCQ */}
         {q.type === 'mcq' && (
           <>
@@ -201,7 +201,7 @@ const QuizBattle = memo(function QuizBattle({
                 const isSelected = selectedOption === i;
                 const isCorrectAnswer = i === q.correct;
                 let optClass =
-                  'flex items-center gap-3 px-4 py-3 bg-[#12121e] border border-[#2a2a3e] rounded-lg cursor-pointer transition-all';
+                  'flex items-center gap-3 px-4 py-3 min-h-[52px] bg-[#12121e] border border-[#2a2a3e] rounded-lg cursor-pointer transition-all';
 
                 if (answered) {
                   optClass += ' pointer-events-none';
@@ -287,7 +287,7 @@ const QuizBattle = memo(function QuizBattle({
               Matching
             </div>
             <div className="text-[#e8e0d0] text-base mb-4 leading-[1.7]">{q.question}</div>
-            <div className="flex gap-5 justify-center flex-wrap mt-3">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center mt-3">
               <div className="flex flex-col gap-1.5">
                 {q.pairs.map((p, i) => {
                   const isMatched = matchedPairs.has(i);
@@ -298,7 +298,7 @@ const QuizBattle = memo(function QuizBattle({
                       key={`ml-${i}`}
                       onClick={() => !isMatched && handleMatchLeft(i)}
                       disabled={isMatched}
-                      className={`px-4 py-2.5 rounded-lg border min-w-[120px] text-center font-sanskrit text-[1.1rem] transition-all cursor-pointer ${
+                      className={`px-4 py-3 rounded-lg border w-full sm:min-w-[120px] text-center font-sanskrit text-[1.1rem] transition-all cursor-pointer ${
                         isMatched
                           ? 'border-[#27ae60] bg-[rgba(39,174,96,0.1)] text-[#27ae60] pointer-events-none'
                           : isWrongLeft
@@ -323,7 +323,7 @@ const QuizBattle = memo(function QuizBattle({
                       key={`mr-${i}`}
                       onClick={() => !isMatched && handleMatchRight(r)}
                       disabled={isMatched}
-                      className={`px-4 py-2.5 rounded-lg border min-w-[120px] text-center text-[0.9rem] transition-all cursor-pointer ${
+                      className={`px-4 py-3 rounded-lg border w-full sm:min-w-[120px] text-center text-[0.9rem] transition-all cursor-pointer ${
                         isMatched
                           ? 'border-[#27ae60] bg-[rgba(39,174,96,0.1)] text-[#27ae60] pointer-events-none'
                           : isWrongRight

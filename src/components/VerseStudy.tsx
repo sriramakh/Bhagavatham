@@ -126,7 +126,7 @@ const VerseStudy = memo(function VerseStudy({
       </div>
 
       {/* Verse Box */}
-      <div className="bg-gradient-to-br from-[rgba(212,168,67,0.08)] to-[rgba(212,168,67,0.02)] border border-[rgba(212,168,67,0.3)] rounded-xl p-8 text-center my-5 relative">
+      <div className="bg-gradient-to-br from-[rgba(212,168,67,0.08)] to-[rgba(212,168,67,0.02)] border border-[rgba(212,168,67,0.3)] rounded-xl p-4 sm:p-8 text-center my-5 relative">
         {/* Decorative markers */}
         <span className="absolute top-2.5 left-4 font-heading text-[#8a6d2b] text-2xl opacity-30">
           {'\u0965'}
@@ -214,7 +214,7 @@ const VerseStudy = memo(function VerseStudy({
           {verse.words.map((w, i) => (
             <div
               key={i}
-              className="flex flex-col items-center bg-[#1a1a2e] border border-[#2a2a3e] rounded-lg px-3 py-2.5 cursor-pointer transition-all min-w-[75px] hover:border-[#8a6d2b] hover:bg-[#222240] hover:-translate-y-0.5 relative group"
+              className="flex flex-col items-center bg-[#1a1a2e] border border-[#2a2a3e] rounded-lg px-2.5 py-2.5 cursor-pointer transition-all min-w-[60px] hover:border-[#8a6d2b] hover:bg-[#222240] hover:-translate-y-0.5 relative group"
             >
               {/* Tooltip */}
               <div className="absolute bottom-[calc(100%+8px)] left-1/2 -translate-x-1/2 bg-[#0a0a12] border border-[#8a6d2b] rounded-lg px-3 py-2 text-[0.75rem] text-[#e8e0d0] whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10">
@@ -238,7 +238,7 @@ const VerseStudy = memo(function VerseStudy({
       </div>
 
       {/* Madhvacharya's Teaching */}
-      <div className="bg-gradient-to-br from-[rgba(212,168,67,0.12)] to-[rgba(212,168,67,0.04)] border-2 border-[#8a6d2b] rounded-xl p-6 my-6 relative">
+      <div className="bg-gradient-to-br from-[rgba(212,168,67,0.12)] to-[rgba(212,168,67,0.04)] border-2 border-[#8a6d2b] rounded-xl p-4 sm:p-6 my-6 relative">
         <div className="absolute -top-px left-5 right-5 h-0.5 bg-gradient-to-r from-transparent via-[#d4a843] to-transparent" />
         <div className="font-heading text-[#d4a843] text-[0.8rem] tracking-[2px] uppercase mb-2.5 flex items-center gap-2">
           {'\uD83E\uDEB7'} Madhvacharya&apos;s Teaching
@@ -287,7 +287,7 @@ function AudioButton({
   return (
     <button
       onClick={onClick}
-      className={`px-3 py-1.5 rounded-full border text-[0.75rem] bg-transparent cursor-pointer transition-all ${colorMap[color]}`}
+      className={`px-3 py-2 rounded-full border text-[0.75rem] min-h-[44px] bg-transparent cursor-pointer transition-all ${colorMap[color]}`}
     >
       {label}
     </button>
