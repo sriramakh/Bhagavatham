@@ -25,11 +25,19 @@
   --font-body: 'Inter', sans-serif;
 }
 
+/* Mobile: boost root font size so all rem values scale up */
+@media (max-width: 767px) {
+  html {
+    font-size: 18px;
+  }
+}
+
 body {
   font-family: var(--font-body);
   background: var(--bg-darkest);
   color: var(--text-primary);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 .font-heading {

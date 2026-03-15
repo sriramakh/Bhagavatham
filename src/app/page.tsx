@@ -383,14 +383,14 @@ export default function Home() {
         onSettingsClick={() => setSettingsOpen(true)}
       />
 
-      <div className="grid grid-cols-[260px_1fr_240px] gap-0 mt-14 min-h-[calc(100dvh-56px)] max-lg:grid-cols-[1fr] max-xl:grid-cols-[220px_1fr_200px]">
+      <div className="grid grid-cols-[260px_1fr_240px] gap-0 mt-14 md:min-h-[calc(100dvh-56px)] max-lg:grid-cols-[1fr] max-xl:grid-cols-[220px_1fr_200px]">
         {/* Left Sidebar */}
         <div className="max-lg:hidden">
           <CharacterPanel state={state} onSelectSkandha={selectSkandha} />
         </div>
 
         {/* Main Content */}
-        <main className="px-4 sm:px-6 md:px-8 py-4 sm:py-6 max-w-full overflow-y-auto h-[calc(100dvh-56px)]">
+        <main className="px-4 sm:px-6 md:px-8 py-4 sm:py-6 pb-24 md:pb-6 max-w-full md:overflow-y-auto md:h-[calc(100dvh-56px)]">
           {/* Welcome Screen */}
           {screen === 'welcome' && (
             <WelcomeScreen onStart={goToChapterSelect} onReset={handleResetProgress} />
