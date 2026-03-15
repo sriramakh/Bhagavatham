@@ -37,9 +37,9 @@ const CharacterPanel = memo(function CharacterPanel({
     <aside className="bg-[#12121e] border-r border-[#2a2a3e] p-5 px-4 overflow-y-auto h-[calc(100vh-56px)] sticky top-14">
       <div className="text-center">
         {/* Avatar */}
-        <div className="w-[100px] h-[100px] mx-auto mb-3 rounded-full border-[3px] border-[#d4a843] bg-[#1a1a2e] flex items-center justify-center text-[2.8rem] shadow-[0_0_20px_rgba(212,168,67,0.3)] relative overflow-hidden">
-          <div className="absolute inset-[-3px] rounded-full border-[3px] border-transparent border-t-[#e8862a] animate-spin" />
-          {'\uD83D\uDE4F'}
+        <div className="w-[100px] h-[100px] mx-auto mb-3 rounded-full border-[3px] border-[#d4a843] shadow-[0_0_20px_rgba(212,168,67,0.3)] relative overflow-hidden">
+          <div className="absolute inset-[-3px] rounded-full border-[3px] border-transparent border-t-[#e8862a] animate-spin z-10" />
+          <img src="/images/logo/logo.png" alt="Mahavishnu" className="w-full h-full object-cover object-[center_20%]" />
         </div>
 
         <div className="font-heading text-[#f0d078] text-base mb-0.5">Seeker</div>
