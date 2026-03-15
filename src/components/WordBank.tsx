@@ -19,7 +19,7 @@ const WordBank = memo(function WordBank({ words }: WordBankProps) {
   }, [words]);
 
   return (
-    <aside className="bg-[#12121e] border-l border-[#2a2a3e] p-5 px-4 overflow-y-auto h-[calc(100vh-56px)] sticky top-14">
+    <aside className="bg-[#12121e] border-l border-[#2a2a3e] p-5 px-4 overflow-y-auto h-[calc(100dvh-56px)] sticky top-14">
       <h3 className="font-heading text-[0.75rem] text-[#d4a843] tracking-[1px] uppercase mb-3">
         {'\uD83D\uDCDA'} Sanskrit Word Bank
       </h3>

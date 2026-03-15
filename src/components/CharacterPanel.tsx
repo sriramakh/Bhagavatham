@@ -34,7 +34,7 @@ const CharacterPanel = memo(function CharacterPanel({
   );
 
   return (
-    <aside className="bg-[#12121e] border-r border-[#2a2a3e] p-5 px-4 overflow-y-auto h-[calc(100vh-56px)] sticky top-14">
+    <aside className="bg-[#12121e] border-r border-[#2a2a3e] p-5 px-4 overflow-y-auto h-[calc(100dvh-56px)] sticky top-14">
       <div className="text-center">
         {/* Avatar */}
         <div className="w-[100px] h-[100px] mx-auto mb-3 rounded-full border-[3px] border-[#d4a843] shadow-[0_0_20px_rgba(212,168,67,0.3)] relative overflow-hidden">
