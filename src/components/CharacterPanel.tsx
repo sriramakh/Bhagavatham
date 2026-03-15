@@ -110,7 +110,7 @@ const CharacterPanel = memo(function CharacterPanel({
             {SKANDHA_NAMES.map((name, i) => {
               const num = i + 1;
               const isActive = num === state.currentSkandha;
-              const isLocked = num > 1;
+              const isLocked = false;
               return (
                 <button
                   key={num}
