@@ -20,7 +20,10 @@ const SanskritLesson = memo(function SanskritLesson({
   onDndComplete,
   onDndError,
 }: SanskritLessonProps) {
-  const dndWords = useMemo(() => shuffle([...words]).slice(0, 4), [words]);
+  const dndWords = useMemo(
+    () => shuffle([...words].filter((w) => w.san?.trim())).slice(0, 4),
+    [words]
+  );
 
   return (
     <div className="max-w-[700px] mx-auto animate-fadeIn">
@@ -69,7 +72,7 @@ const TeachCard = memo(function TeachCard({ word }: { word: SanskritWord }) {
   return (
     <div className="bg-[#1a1a2e] border border-[#2a2a3e] rounded-xl p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5 transition-all hover:border-[#8a6d2b]">
       <div className="font-sanskrit text-[#f0d078] text-[1.8rem] sm:min-w-[100px] text-left sm:text-center w-full sm:w-auto">
-        {word.san}
+        {word.san || word.trans}
       </div>
       <div className="flex-1">
         <div className="text-[#f4a03b] text-[0.9rem] italic">{word.trans}</div>

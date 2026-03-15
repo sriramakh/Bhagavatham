@@ -1,8 +1,8 @@
 'use client';
 
-import React, { memo, useState, useCallback, useRef, useEffect } from 'react';
+import React, { memo, useState, useCallback, useEffect } from 'react';
 import { Verse } from '@/types';
-import { speakVerse, speakWord, speakSyllable, stopSpeech } from '@/lib/speech';
+import { speakVerse, speakWord, stopSpeech } from '@/lib/speech';
 
 interface VerseStudyProps {
   verse: Verse;
@@ -25,16 +25,13 @@ const VerseStudy = memo(function VerseStudy({
   onContinue,
   onBack,
 }: VerseStudyProps) {
-  const [highlightedSyllable, setHighlightedSyllable] = useState<number | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(verse.imagePath || null);
   const [imageLoading, setImageLoading] = useState(false);
   const [imageError, setImageError] = useState<string | null>(null);
-  const karaokeRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Clean up karaoke on unmount
+  // Clean up speech on unmount
   useEffect(() => {
     return () => {
-      if (karaokeRef.current) clearTimeout(karaokeRef.current);
       stopSpeech();
     };
   }, []);
@@ -46,45 +43,11 @@ const VerseStudy = memo(function VerseStudy({
     [chapterId, verse.sanskrit]
   );
 
-  const startKaraoke = useCallback(() => {
-    stopSpeech();
-    if (karaokeRef.current) clearTimeout(karaokeRef.current);
-
-    const syllables = verse.syllables;
-    let i = 0;
-
-    async function playNext() {
-      if (i >= syllables.length) {
-        setHighlightedSyllable(null);
-        return;
-      }
-      while (i < syllables.length && syllables[i] === ' ') i++;
-      if (i >= syllables.length) {
-        setHighlightedSyllable(null);
-        return;
-      }
-
-      setHighlightedSyllable(i);
-      try {
-        await speakSyllable(syllables[i]);
-      } catch { /* ignore */ }
-      i++;
-      karaokeRef.current = setTimeout(playNext, 300);
-    }
-    playNext();
-  }, [verse.syllables]);
-
   const handleSyllableClick = useCallback(
-    async (idx: number) => {
-      if (verse.syllables[idx] && verse.syllables[idx] !== ' ') {
-        setHighlightedSyllable(idx);
-        try {
-          await speakSyllable(verse.syllables[idx]);
-        } catch { /* ignore */ }
-        setHighlightedSyllable(null);
-      }
+    (_idx: number) => {
+      playFullVerse(false);
     },
-    [verse.syllables]
+    [playFullVerse]
   );
 
   const handleGenerateImage = useCallback(async () => {
@@ -151,11 +114,6 @@ const VerseStudy = memo(function VerseStudy({
             color="blue"
             label={'\uD83D\uDC22 Slow Mode'}
           />
-          <AudioButton
-            onClick={startKaraoke}
-            color="saffron"
-            label={'\uD83C\uDFA4 Follow Along'}
-          />
           <AudioButton onClick={stopSpeech} color="crimson" label={'\u23F9 Stop'} />
         </div>
 
@@ -179,29 +137,16 @@ const VerseStudy = memo(function VerseStudy({
             if (s === ' ') {
               return <span key={i} className="w-3 inline-block" />;
             }
-            const isHighlighted = highlightedSyllable === i;
             return (
               <span
                 key={i}
                 onClick={() => handleSyllableClick(i)}
-                className={`px-1.5 py-2 rounded font-sanskrit text-[1.2rem] cursor-pointer transition-all ${
-                  isHighlighted
-                    ? 'text-[#f0d078] bg-[rgba(212,168,67,0.15)] scale-110'
-                    : 'text-[#a89b8c] hover:text-[#f0d078]'
-                }`}
+                className="px-1.5 py-2 rounded font-sanskrit text-[1.2rem] cursor-pointer transition-all text-[#a89b8c] hover:text-[#f0d078]"
               >
                 {s}
               </span>
             );
           })}
-        </div>
-        <div className="mt-3">
-          <button
-            onClick={startKaraoke}
-            className="text-[0.75rem] px-3.5 py-1.5 border border-[#e8862a] text-[#f4a03b] bg-transparent rounded-full cursor-pointer hover:bg-[rgba(232,134,42,0.1)] transition-all"
-          >
-            {'\uD83D\uDD0A'} Auto-play syllables
-          </button>
         </div>
       </div>
 
